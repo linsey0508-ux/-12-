@@ -530,3 +530,36 @@ body {
     word-break: keep-all;
     line-height: 1.8;
 }
+/* ===================================================
+   ✨ 스토리 페이지 전용 글자 가독성 극대화 (그림자 추가)
+   =================================================== */
+
+/* 1. 챕터 번호와 제목(조각, 투우의 등장 등)에 강력한 블랙 그림자 적용 */
+.story-container .chapter-num {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.story-container .story-panel h2 {
+    color: #ffffff;
+    /* 그라디언트 경계선에서도 글자가 뚜렷하게 튀어나오도록 2중 그림자 적용 */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.95), 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* 2. 사진 밑에 들어가는 내용 글귀 가독성 확보 */
+.story-container .scene-wrap .text-box p {
+    color: #ffffff !important; /* 약간 어두웠던 회색을 완전한 흰색으로 변경 */
+    font-weight: 500;          /* 글자 두께를 살짝 올려 선명하게 */
+    /* 글자 뒤에 어두운 연기처럼 부드러운 그림자를 깔아 배경 분리 */
+    text-shadow: 
+        0 2px 4px rgba(17, 17, 17, 0.95), 
+        0 4px 12px rgba(17, 17, 17, 0.8),
+        0 0 20px rgba(17, 17, 17, 0.6); 
+}
+
+/* 3. 시네마틱 구조가 아닌 일반 챕터(3, 4, 5)의 내용 글귀도 동일하게 적용 */
+.story-panel:not(.cinematic-chapter) .text-box p {
+    color: #ffffff !important;
+    text-shadow: 
+        0 2px 4px rgba(17, 17, 17, 0.95), 
+        0 4px 12px rgba(17, 17, 17, 0.8);
+}
