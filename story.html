@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="scene-wrap reverse fade-in">
+            <div class="scene-wrap fade-in">
                 <img src="scene1-2.jpg" alt="장면 1-2">
                 <div class="text-box">
                     <p>그녀는 냉철하고 노련한 업계의 대모다.</p>
@@ -54,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="scene-wrap reverse fade-in">
+            <div class="scene-wrap fade-in">
                 <img src="scene1-4.jpeg" alt="장면 1-4">
                 <div class="text-box">
                     <p>하지만 흐르는 시간 속에서 그녀의 칼날도 조금씩 무뎌지기 시작한다.</p>
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="scene-wrap reverse fade-in">
+            <div class="scene-wrap fade-in">
                 <img src="scene2-2.jpg" alt="장면 2-2">
                 <div class="text-box">
                     <p>숨 막히는 긴장감 속에서 조각에게 자꾸만 시비를 거는 투우.</p>
@@ -99,7 +99,7 @@
                 </div>
             </div>
 
-            <div class="scene-wrap reverse fade-in">
+            <div class="scene-wrap fade-in">
                 <img src="scene3-2.jpg" alt="장면 3-2">
                 <div class="text-box">
                     <p>정신이 들자마자 킬러로서의 본능적인 방어기제와 극도의 경계심으로 눈앞의 강 박사를 거칠게 몰아붙이는 조각.</p>
@@ -114,12 +114,22 @@
             </div>
         </section>
 
-        <section id="chapter4" class="story-panel">
+        <section id="chapter4" class="story-panel cinematic-chapter">
             <span class="chapter-num">CHAPTER 4</span>
             <h2>지키고 싶은 것들이 생긴 조각</h2>
-            <img src="https://via.placeholder.com/800x500/222222/555555?text=Chapter+4+Image" alt="장면 4">
-            <div class="text-box">
-                <p>강박사의 가족을 만난 조각. 그녀는 강 박사의 딸을 보고 처음으로 지키고 싶다는 마음을 갖게 된다.</p>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene4-1.jpg" alt="장면 4-1">
+                <div class="text-box">
+                    <p>늘 피와 어둠뿐이었던 조각의 삶 속에, 하나뿐인 어린 딸을 품에 소중히 안아 지켜내는 강 박사의 따뜻하고 무해한 일상이 들어오기 시작한다.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene4-2.jpg" alt="장면 4-2">
+                <div class="text-box">
+                    <p>그들 부녀가 함께 나누는 따스한 미소와 평화를 곁에서 지켜보며, 조각은 평생 느껴보지 못한 감정의 일렁임을 겪는다. 쇠잔해져 가던 킬러의 마음속에 처음으로 '파괴'가 아닌 '지키고 싶은 마음'이 태어난 순간이었다.</p>
+                </div>
             </div>
         </section>
 
@@ -135,12 +145,7 @@
 
     <script>
         const fadeElements = document.querySelectorAll('.fade-in');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
 
         const fadeObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -151,9 +156,7 @@
             });
         }, observerOptions);
 
-        fadeElements.forEach(element => {
-            fadeObserver.observe(element);
-        });
+        fadeElements.forEach(element => { fadeObserver.observe(element); });
     </script>
 </body>
 </html>
