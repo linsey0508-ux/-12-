@@ -1,4 +1,5 @@
 /* 기본 설정 초기화 및 부드러운 스크롤 */
+/* 기본 설정 및 부드러운 스크롤 */
 html {
     scroll-behavior: smooth;
 }
@@ -9,18 +10,84 @@ html {
     box-sizing: border-box;
 }
 
+/* [기본 배경] 캐릭터, 인포 페이지는 기본 바디 스타일을 따라 검은색 단색이 됩니다 */
 body {
-    background-color: #050505;
+    background-color: #020202;
     color: #e0e0e0;
     font-family: 'Nanum Myeongjo', serif;
     line-height: 1.8;
 }
 
-.landing-body {
+/* --- 1. 인트로 페이지 전용 배경 (index.html) --- */
+.intro-body {
+    /* 💡 확장자를 .jpeg로 정확하게 매칭했습니다 */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('main-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
-/* --- 1. 상단 고정 메뉴 바 --- */
+.intro-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-content h1 {
+    font-size: 4rem;
+    letter-spacing: 15px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+}
+
+.intro-content .subtitle {
+    color: #bbb;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+}
+
+.enter-btn {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.enter-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- 2. 스토리 페이지 전용 배경 (story.html) --- */
+.story-body {
+    background: linear-gradient(to bottom, #ffffff 0%, #dcdcdc 30%, #404040 70%, #050505 100%);
+    background-attachment: scroll;
+    color: #111;
+}
+
+.story-body .top-nav .logo { color: #fff; }
+.story-body .top-nav .nav-links a { color: #aaa; }
+.story-body .top-nav .nav-links a:hover, .story-body .top-nav .nav-links a.active { color: #fff; }
+.story-body h2 { color: #111; }
+.story-body .text-box p { color: #222; font-weight: 500; }
+.story-body .side-nav a { background-color: #ffffff; color: #333; border: 1px solid #ccc; }
+.story-body .side-nav a:hover { background-color: #111; color: #fff; }
+
+.story-body #chapter4 h2, .story-body #chapter4 p,
+.story-body #chapter5 h2, .story-body #chapter5 p {
+    color: #fff !important;
+}
+
+/* --- 3. 상단 고정 메뉴 바 (공통) --- */
 .top-nav {
     position: fixed;
     top: 0;
@@ -56,7 +123,7 @@ body {
     color: #fff;
 }
 
-/* --- 2. 우측 고정 챕터 메뉴 --- */
+/* --- 4. 우측 고정 네비게이션 (공통) --- */
 .side-nav {
     position: fixed;
     right: 30px;
@@ -89,44 +156,7 @@ body {
     background-color: #222;
 }
 
-/* --- 3. 인트로 섹션 --- */
-.intro-section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #0a0a0a;
-}
-
-.intro-content h1 {
-    font-size: 4rem;
-    letter-spacing: 15px;
-    margin-bottom: 15px;
-}
-
-.intro-content .subtitle {
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.enter-btn {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #fff;
-    padding: 12px 30px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    transition: all 0.3s;
-}
-
-.enter-btn:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-/* --- 4. 스토리 본문 --- */
+/* --- 5. 스토리 본문 컨테이너 --- */
 .story-container {
     max-width: 800px;
     margin: 0 auto;
@@ -165,27 +195,7 @@ body {
     word-break: keep-all;
 }
 
-/* --- 5. 정보 페이지 전용 --- */
-.page-wrapper {
-    min-height: 100vh;
-    padding-top: 150px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.page-wrapper h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    letter-spacing: 4px;
-}
-
-.page-wrapper p {
-    font-size: 1.2rem;
-    color: #aaa;
-}
-
-/* --- 6. 캐릭터 페이지 전용 대형 시네마틱 스타일 (NEW) --- */
+/* --- 6. 캐릭터 페이지 전용 스타일 --- */
 .character-container {
     padding-top: 60px;
     background-color: #020202;
@@ -209,7 +219,6 @@ body {
     gap: 60px;
 }
 
-/* 이미지와 글씨 좌우반전용 세팅 */
 .char-wrap.reverse {
     flex-direction: row-reverse;
 }
@@ -275,7 +284,7 @@ body {
     filter: grayscale(0%);
 }
 
-/* 엑스트라 전용 세팅 */
+/* 엑스트라 그리드 */
 .extras-section {
     flex-direction: column;
     justify-content: center;
@@ -335,21 +344,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* 화면이 작아질 때 반응형 설정 */
-@media (max-width: 850px) {
-    .char-wrap, .char-wrap.reverse {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 40px;
-    }
-    .char-meta {
-        border-left: none;
-        padding-left: 0;
-    }
-    .extras-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 /* --- 7. 정보(Info) 페이지 전용 스타일 --- */
 .info-container {
     padding-top: 60px;
@@ -418,7 +412,6 @@ body {
     word-break: keep-all;
 }
 
-/* 영화 및 비디오 영역 스타일 */
 .video-section {
     background-color: #050505;
 }
@@ -439,11 +432,10 @@ body {
     margin-bottom: 20px;
 }
 
-/* 유튜브 반응형 16:9 비율 유지 박스 */
 .youtube-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 비율 */
+    padding-bottom: 56.25%;
     height: 0;
     border: 1px solid #222;
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
@@ -457,12 +449,19 @@ body {
     height: 100%;
 }
 
-/* 화면 크기가 작아질 때 모바일 반응형 처리 */
+/* 반응형 모바일 설정 */
 @media (max-width: 850px) {
-    .info-wrap {
-        flex-direction: column;
+    .char-wrap, .char-wrap.reverse, .info-wrap {
+        flex-direction: column-reverse;
         text-align: center;
         gap: 40px;
+    }
+    .char-meta {
+        border-left: none;
+        padding-left: 0;
+    }
+    .extras-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     .info-title {
         font-size: 2.2rem;
