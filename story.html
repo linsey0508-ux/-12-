@@ -62,12 +62,29 @@
             </div>
         </section>
 
-        <section id="chapter2" class="story-panel">
+        <section id="chapter2" class="story-panel cinematic-chapter">
             <span class="chapter-num">CHAPTER 2</span>
             <h2>투우의 등장</h2>
-            <img src="https://via.placeholder.com/800x500/222222/555555?text=Chapter+2+Image" alt="장면 2">
-            <div class="text-box">
-                <p>조각에게 자꾸만 시비를 거는 투우.</p>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene2-1.jpg" alt="장면 2-1">
+                <div class="text-box">
+                    <p>조각의 곁을 맴돌며 예리하게 숨통을 조여오는 새로운 인물.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap reverse fade-in">
+                <img src="scene2-2.jpg" alt="장면 2-2">
+                <div class="text-box">
+                    <p>숨 막히는 긴장감 속에서 조각에게 자꾸만 시비를 거는 투우.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene2-3.jpeg" alt="장면 2-3">
+                <div class="text-box">
+                    <p>그의 도발은 단순한 장난이 아닌, 거대한 폭풍의 전조였다.</p>
+                </div>
             </div>
         </section>
 
@@ -105,7 +122,7 @@
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.2
+            threshold: 0.15 // 간격이 넓어졌으므로 감도를 살짝 더 올림
         };
 
         const fadeObserver = new IntersectionObserver((entries, observer) => {

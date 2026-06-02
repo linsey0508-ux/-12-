@@ -467,3 +467,23 @@ body {
         font-size: 2.2rem;
     }
 }
+/* 💡 사진과 사진 사이의 간격을 살짝 더 넓게 조정 (기존 180px -> 240px) */
+.scene-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 240px; /* 이 부분을 늘려 간격을 넓혔습니다 */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 일반 단락 형태의 챕터(3, 4, 5)들 사이 간격도 함께 넓게 균형 조정 */
+.story-panel:not(.cinematic-chapter) {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 100px;
+    margin-bottom: 240px; 
+    text-align: center;
+}
