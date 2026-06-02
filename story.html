@@ -88,12 +88,29 @@
             </div>
         </section>
 
-        <section id="chapter3" class="story-panel">
+        <section id="chapter3" class="story-panel cinematic-chapter">
             <span class="chapter-num">CHAPTER 3</span>
             <h2>조각의 부상 그리고 강 박사와의 만남</h2>
-            <img src="https://via.placeholder.com/800x500/222222/555555?text=Chapter+3+Image" alt="장면 3">
-            <div class="text-box">
-                <p>조각이 노화로 인해 몸과 마음, 생각 모두 이전과 같지 않다. 한순간의 실수로 그녀는 큰 부상을 입고, 강 박사에게 치료받게 된다.</p>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene3-1.jpg" alt="장면 3-1">
+                <div class="text-box">
+                    <p>노화로 인해 이전 같지 않은 몸. 한순간의 실수로 조각은 치명적인 부상을 입고 의식을 잃은 채 강 박사의 병원으로 실려 온다.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap reverse fade-in">
+                <img src="scene3-2.jpg" alt="장면 3-2">
+                <div class="text-box">
+                    <p>정신이 들자마자 킬러로서의 본능적인 방어기제와 극도의 경계심으로 눈앞의 강 박사를 거칠게 몰아붙이는 조각.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene3-3.jpg" alt="장면 3-3">
+                <div class="text-box">
+                    <p>차가운 무기를 목에 겨눈 숨 막히는 대치 속에서, 두 사람의 기묘하고도 위태로운 인연이 시작된다.</p>
+                </div>
             </div>
         </section>
 
@@ -122,7 +139,7 @@
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.15 // 간격이 넓어졌으므로 감도를 살짝 더 올림
+            threshold: 0.15
         };
 
         const fadeObserver = new IntersectionObserver((entries, observer) => {

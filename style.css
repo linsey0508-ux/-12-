@@ -487,3 +487,46 @@ body {
     margin-bottom: 240px; 
     text-align: center;
 }
+/* 💡 오직 스토리 페이지(.story-container 내의 scene-wrap)의 사진과 텍스트만 세로로 배치합니다. */
+.story-container .scene-wrap {
+    display: flex;
+    flex-direction: column;  /* 가로 배치를 세로 배치로 변경 */
+    align-items: center;     /* 사진과 글을 가운데 정렬 */
+    gap: 30px;               /* 사진과 바로 밑 설명 글 사이의 간격 */
+    margin-bottom: 240px;    /* 사진 세트와 다음 사진 세트 사이의 넓은 간격 */
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 💡 좌우 반전 클래스가 있어도 무조건 세로로 정렬되도록 고정 */
+.story-container .scene-wrap.reverse {
+    flex-direction: column;  
+}
+
+/* 💡 스토리 페이지 내 이미지 크기 최적화 */
+.story-container .scene-wrap img {
+    width: 100%;
+    max-width: 800px;        /* 스토리용 사진의 최대 가로 크기 제한 */
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 💡 스토리 페이지 내 텍스트 상자 정렬 */
+.story-container .scene-wrap .text-box {
+    width: 100%;
+    max-width: 800px;        /* 사진 가로폭과 통일 */
+    text-align: center;      /* 글귀를 가운데 정렬하여 안정감 부여 */
+    padding: 0 20px;
+}
+
+.story-container .text-box p {
+    font-size: 18px;
+    color: #cccccc;
+    word-break: keep-all;
+    line-height: 1.8;
+}
