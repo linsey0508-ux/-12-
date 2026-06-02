@@ -28,13 +28,39 @@
     </nav>
 
     <main class="story-container">
-        <section id="chapter1" class="story-panel">
+        
+        <section id="chapter1" class="story-panel cinematic-chapter">
             <span class="chapter-num">CHAPTER 1</span>
             <h2>폭풍의 서막</h2>
-            <img src="https://via.placeholder.com/800x500/222222/555555?text=Chapter+1+Image" alt="장면 1">
-            <div class="text-box">
-                <p>폭풍이 다가오고 있었다. 하늘은 먹물처럼 검었고, 파도는 배를 집어삼킬 듯이 높게 일었다.</p>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene1-1.jpg" alt="장면 1-1">
+                <div class="text-box">
+                    <p>그녀는 지하철에 몸을 실었다. 수많은 사람들이 스쳐 지나갔지만, 누구도 그녀의 숨겨진 날카로움을 눈치채지 못했다.</p>
+                </div>
             </div>
+
+            <div class="scene-wrap reverse fade-in">
+                <img src="scene1-2.jpg" alt="장면 1-2">
+                <div class="text-box">
+                    <p>어떤 이들은 휴대폰에, 어떤 이들은 잠에 빠져 있었다. 그녀의 차가운 시선은 그 평범한 평화 속을 파고들었다.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap fade-in">
+                <img src="scene1-3.jpg" alt="장면 1-3">
+                <div class="text-box">
+                    <p>짧은 섬광. 비명조차 지르지 못한 채 한 남자가 쓰러졌다. 그녀의 완벽하고 소리 없는 의뢰 수행이었다.</p>
+                </div>
+            </div>
+
+            <div class="scene-wrap reverse fade-in">
+                <img src="scene1-4.jpeg" alt="장면 1-4">
+                <div class="text-box">
+                    <p>차가운 새벽 공기 속으로, 그녀는 다시 어두운 골목으로 사라졌다. 그녀의 뒤에 남은 것은 오직 깊은 침묵뿐이었다.</p>
+                </div>
+            </div>
+
         </section>
 
         <section id="chapter2" class="story-panel">
@@ -74,5 +100,27 @@
         </section>
     </main>
 
+    <script>
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 // 20%만 보여도 부드럽게 나타나도록 감도 조절
+        };
+
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+    </script>
 </body>
 </html>
